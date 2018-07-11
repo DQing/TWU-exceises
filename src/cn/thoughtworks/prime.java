@@ -10,7 +10,7 @@ public class prime {
     public static void main(String[] args) {
         System.out.print("n=");
         Scanner n = new Scanner(System.in);
-        factor(n.nextInt());30
+        factor(n.nextInt());
     }
 
     static void factor(int number) {
