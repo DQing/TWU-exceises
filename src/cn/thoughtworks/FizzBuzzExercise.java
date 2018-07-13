@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Created by douqing on 18-7-11.
- */
 public class FizzBuzzExercise{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
