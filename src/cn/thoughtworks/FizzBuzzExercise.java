@@ -5,25 +5,39 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FizzBuzzExercise{
+    private static List<String> results = new ArrayList<>();
+
     public static void main(String[] args){
+        System.out.print("n=");
         Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        List<String> result = new ArrayList<>(n);
-        for (int i = 1; i <= n; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                result.add("FizzBuzz");
-            } else {
-                if (i % 3 == 0) {
-                    result.add("Fizz");
-                } else {
-                    if (i % 5 == 0) {
-                        result.add("Buzz");
-                    } else {
-                        result.add(i + "");
-                    }
-                }
-            }
+        int number = input.nextInt();
+        for (int i = 1; i <= number; i++) {
+            String result = sayNumber(i);
+            results.add(result);
         }
-        System.out.print(result);
+        System.out.print(results);
     }
+
+    static String sayNumber(int number) {
+        String word = "";
+        String num = String.valueOf(number);
+        if (num.contains("3")) {
+            return "Fizz";
+        }
+        word += threeMultiple(number) + fiveMultiple(number) + sevenMultiple(number);
+        if (word.equals("")) {
+            return num;
+        }
+        return word;
+    }
+    public static String threeMultiple(int i) {
+        return i % 3 == 0 ? "Fizz" : "";
+    }
+    public static String fiveMultiple(int i) {
+        return i % 5 == 0 ? "Buzz" : "";
+    }
+    public static String sevenMultiple(int i) {
+        return i % 7 == 0 ? "Whizz" : "";
+    }
+
 }
