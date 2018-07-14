@@ -12,31 +12,36 @@ public class DiamondExercises {
         System.out.print("name=");
         String name = inputName.nextLine();
 
-        for (int i = 0; i < number; i++) {
-            for (int j = 0; j < number*2-1; j++) {
-                if (j >= number-1 - i && j <= number-1 + i && i!=number-1) {
-                    System.out.print("*");
-                }else if (i==number-1){
-                    System.out.print(name);
-                }else {
-                    System.out.print(" ");
-                }
+        createFrontPart(number,name);
+        createEndPart(number);
+    }
 
+    private static void createEndPart(int number) {
+        for (int i = number-1; i > 0; i--) {
+            for (int k = 0;k<number-i;k++){
+                System.out.print(" ");
             }
-            System.out.println("");
+            for (int j = 0; j < i * 2 - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void createFrontPart(int number, String name) {
+        for (int i = 1; i <= number; i++) {
+            for (int k = 0; k < number - i; k++) {
+                System.out.print(" ");
+            }
+            if (i == number) {
+                System.out.print(name);
+            } else {
+                for (int j = 0; j < i * 2 - 1; j++) {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
         }
 
-
-        for (int i = number-2; i >= 0; i--) {
-            for (int j = 0; j < number*2-1; j++) {
-                if (j >= number-1 - i && j <= number-1 + i) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
-                }
-
-            }
-            System.out.println("");
-        }
     }
 }

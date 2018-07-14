@@ -18,7 +18,7 @@ public class FizzBuzzExercise{
         System.out.print(results);
     }
 
-    static String sayNumber(int number) {
+    private static String sayNumber(int number) {
         String word = "";
         String num = String.valueOf(number);
         if (num.contains("3")) {
@@ -30,13 +30,13 @@ public class FizzBuzzExercise{
         }
         return word;
     }
-    public static String threeMultiple(int i) {
+    private static String threeMultiple(int i) {
         return i % 3 == 0 ? "Fizz" : "";
     }
-    public static String fiveMultiple(int i) {
+    private static String fiveMultiple(int i) {
         return i % 5 == 0 ? "Buzz" : "";
     }
-    public static String sevenMultiple(int i) {
+    private static String sevenMultiple(int i) {
         return i % 7 == 0 ? "Whizz" : "";
     }
 

@@ -9,7 +9,7 @@ public class primeExercise {
         factor(n.nextInt());
     }
 
-    static void factor(int number) {
+    private static void factor(int number) {
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
                 System.out.print(i + "  ");
@@ -22,7 +22,7 @@ public class primeExercise {
             }
         }
     }
-    static boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
                 return false;
